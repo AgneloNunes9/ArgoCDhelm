@@ -4,7 +4,7 @@ metadata:
   name: wordpress
   namespace: frontend
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     id: wordpress
   ports:
