@@ -1,0 +1,17 @@
+#Helm chart
+
+#for backend
+backend:
+  secret:
+    MYSQL_ROOT_PASSWORD: c29tZXdvcmRwcmVzcw==
+    MYSQL_DATABASE: d29yZHByZXNz
+    MYSQL_USER: d29yZHByZXNz
+    MYSQL_PASSWORD: d29yZHByZXNz
+#for frontend
+frontend:
+  secret:
+    WORDPRESS_DB_USER: d29yZHByZXNz
+    WORDPRESS_DB_PASSWORD: d29yZHByZXNz
+  config:
+    WORDPRESS_DB_HOST: db.backend.svc.cluster.local
+    WORDPRESS_DB_NAME: wordpress

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: px
+  namespace: proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      id: px
+  template:
+    metadata:
+      labels:
+        id: px
+    spec:
+      containers:
+      - name: px
+        image: gcr.io/true-area-444000-i0/nginx:latest
+        ports:
+        - containerPort: 8080

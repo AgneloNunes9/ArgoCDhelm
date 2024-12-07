@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+  namespace: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: db
+  template:
+    metadata:
+      labels:
+        name: db
+    spec:
+      containers:
+      - name: db
+        image: mariadb:10.6.4-focal
+        ports:
+        - containerPort: 3306
+        envFrom:
+        - secretRef:
+            name: backend-secret
